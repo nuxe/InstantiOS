@@ -30,6 +30,7 @@
         _header = resource.title;
         _detailText = resource.detail;
         _backgroundImage = resource.backgroundImage;
+        self.view.backgroundColor = [UIColor whiteColor];
         self.title = _header;
     }
     return self;
@@ -136,7 +137,8 @@
 
 - (void)_didTapOnLeftBarButtonItem:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

@@ -21,7 +21,7 @@ CGFloat const kSFFocusViewLayoutStandardHeight = 300;
 
 static NSString * const kSFCollectionViewReuseIdentifier = @"__kSFCollectionViewReuseIdentifier";
 
-@interface SFViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SFViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) RootViewController *rootVC;
@@ -103,9 +103,27 @@ static NSString * const kSFCollectionViewReuseIdentifier = @"__kSFCollectionView
         [collectionView setContentOffset:CGPointMake(0, offset) animated:YES];
     }
     self.rootVC = [[RootViewController alloc] initWithResource:self.resources[indexPath.item]];
-
-    [self.navigationController pushViewController:self.rootVC animated:YES];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.rootVC];
+    [navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    navigationController.navigationBar.shadowImage = [UIImage new];
+    navigationController.navigationBar.translucent = YES;
+//    self.navigationController = navigationController;
+    [self presentViewController:navigationController animated:YES completion:nil];
+//    [self.navigationController pushViewController:self.rootVC animated:YES];
 }
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+
+
+}
+
 
 #pragma mark - Private methods
 
