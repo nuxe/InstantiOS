@@ -12,8 +12,9 @@
 
 @interface SFManager : NSObject
 
-@property (nonatomic, copy, readonly) NSArray *resources;
+@property (nonatomic, copy, readonly) NSMutableArray *resources;
 
 - (void)loadResources;
+- (void)resetResouces;
 
 @end

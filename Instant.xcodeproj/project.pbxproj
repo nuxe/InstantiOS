@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		318616E21CC2DBFC00EC907F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318616E11CC2DBFC00EC907F /* SettingsViewController.m */; };
 		31905ED81CC22351009DD06F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31905ED71CC22351009DD06F /* RootViewController.m */; };
 		31E52D691CC23C44008BF6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E52D681CC23C44008BF6B6 /* Assets.xcassets */; };
 		49321DCB1C0EEF22000619E4 /* SFFocusViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49321DCA1C0EEF22000619E4 /* SFFocusViewLayout.framework */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		0F22FD9895ADE7371D6CA707 /* Pods-Instant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instant/Pods-Instant.release.xcconfig"; sourceTree = "<group>"; };
+		318616E01CC2DBFC00EC907F /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		318616E11CC2DBFC00EC907F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		31905ED61CC22351009DD06F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		31905ED71CC22351009DD06F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		31E52D681CC23C44008BF6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				E749239C1C0E302700FF36E0 /* SFViewController.xib */,
 				31905ED61CC22351009DD06F /* RootViewController.h */,
 				31905ED71CC22351009DD06F /* RootViewController.m */,
+				318616E01CC2DBFC00EC907F /* SettingsViewController.h */,
+				318616E11CC2DBFC00EC907F /* SettingsViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				E74923A31C0E302700FF36E0 /* main.m in Sources */,
 				E74923A91C0E302700FF36E0 /* SFManager.m in Sources */,
 				E74923AD1C0E302700FF36E0 /* SFViewController.m in Sources */,
+				318616E21CC2DBFC00EC907F /* SettingsViewController.m in Sources */,
 				E74923A61C0E302700FF36E0 /* SFAppDelegate.m in Sources */,
 				E74923AB1C0E302700FF36E0 /* SFPresenter.m in Sources */,
 			);

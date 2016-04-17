@@ -8,7 +8,7 @@
 
 #import "SFAppDelegate.h"
 #import "SFViewController.h"
-#import "RootViewController.h"
+#import "SettingsViewController.h"
 
 @implementation SFAppDelegate
 
@@ -19,11 +19,11 @@
     viewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0];
 
 
-    RootViewController *rootVC = [[RootViewController alloc] init];
-    rootVC.title = @"Settings";
-    rootVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:0];
+    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
+    settingsVC.title = @"Settings";
+    settingsVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:0];
 
-    NSArray *viewControllerArrays = [NSArray arrayWithObjects:viewController,rootVC, nil];
+    NSArray *viewControllerArrays = [NSArray arrayWithObjects:viewController,settingsVC, nil];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = viewControllerArrays;

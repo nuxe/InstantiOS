@@ -24,6 +24,8 @@ static NSString * const kSFCollectionViewReuseIdentifier = @"__kSFCollectionView
 @interface SFViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @property (nonatomic) RootViewController *rootVC;
 
 @property (nonatomic, strong) SFManager *manager;
@@ -46,6 +48,7 @@ static NSString * const kSFCollectionViewReuseIdentifier = @"__kSFCollectionView
 
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.searchBar.delegate = self;
 
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
 
@@ -90,8 +93,10 @@ static NSString * const kSFCollectionViewReuseIdentifier = @"__kSFCollectionView
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(SFCollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SFResource *resource = self.resources[indexPath.item];
-    [SFPresenter present:resource inView:cell];
+    if (self.resources.count > 0) {
+        SFResource *resource = self.resources[indexPath.item];
+        [SFPresenter present:resource inView:cell];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -120,14 +125,25 @@ static NSString * const kSFCollectionViewReuseIdentifier = @"__kSFCollectionView
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+//    [self.searchBar resignFirstResponder];
+//
+//    [self.manager resetResouces];
+////    [self.collectionView reloadItemsAtIndexPaths:[self.collectionView indexPathsForVisibleItems]];
+//    [self.collectionView reloadData];
+////    [self.collectionView layoutIfNeeded];
+}
 
-
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+//    [searchBar resignFirstResponder];
+//    [self.manager loadResources];
+//    [self.collectionView reloadData];
 }
 
 
 #pragma mark - Private methods
 
-- (NSArray *)resources
+- (NSMutableArray *)resources
 {
     return self.manager.resources;
 }
